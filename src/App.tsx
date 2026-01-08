@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { Navbar } from './components/Navbar'
 import { NeuHero } from './components/Hero'
 import { RevealBento } from './components/BentoGrid'
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/life" element={<LifeSection />} />
         </Routes>
+        <Analytics />
       </div>
     </Router>
   )

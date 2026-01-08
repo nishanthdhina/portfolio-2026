@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +43,7 @@ export const Navbar = () => {
                 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Nishanth Dhina
+                Nishanth 
               </h1>
             </Link>
           </motion.div>
@@ -69,12 +69,29 @@ export const Navbar = () => {
 };
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const isExternal = href.startsWith('#');
+  const navigate = useNavigate();
+  const isAnchor = href.startsWith('#');
 
-  if (isExternal) {
+  if (isAnchor) {
+    const handleClick = (e: React.MouseEvent) => {
+      e.preventDefault();
+
+      // If not on homepage, navigate there with the hash
+      if (window.location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        // Already on homepage, just scroll
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
     return (
       <a
         href={href}
+        onClick={handleClick}
         className="group relative text-base font-medium text-zinc-700 transition-colors hover:text-zinc-900"
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
@@ -115,6 +132,7 @@ const CTAButton = ({ href }: { href: string }) => {
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="md:hidden">
@@ -146,12 +164,24 @@ const MobileMenu = () => {
             : { opacity: 0, y: -20, transitionEnd: { display: "none" } }
         }
         transition={{ duration: 0.2 }}
-        className="absolute left-0 right-0 top-full mt-2 bg-white shadow-xl backdrop-blur-md"
+        className="absolute left-0 right-0 top-full bg-white shadow-xl backdrop-blur-md"
       >
         <div className="flex flex-col gap-4 p-6">
           <a
             href="#about"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+
+              if (window.location.pathname !== '/') {
+                navigate('/#about');
+              } else {
+                const element = document.querySelector('#about');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
             className="text-lg font-medium text-zinc-700 hover:text-zinc-900"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >

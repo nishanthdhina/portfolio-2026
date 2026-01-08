@@ -14,7 +14,7 @@ export const RevealBento = () => {
           transition={{
             staggerChildren: 0.05,
           }}
-          className="grid max-w-4xl w-full grid-flow-dense grid-cols-12 gap-4"
+          className="grid max-w-4xl w-full grid-flow-dense grid-cols-12 gap-4 mb-16"
         >
           <HeaderBlock />
           <SocialsBlock />
@@ -65,7 +65,7 @@ const HeaderBlock = () => (
       className="mb-4 h-14 w-auto"
     />
     <h1 className="mb-12 text-4xl font-medium leading-tight">
-      Hi, I'm Nishanth.{" "}
+       I'm Nishanth.{" "}
       <span className="text-zinc-400">
         I scale businesses and make a lot of money doing so.
       </span>
@@ -154,10 +154,10 @@ const AboutBlock = () => (
       I've always wanted to be insanely rich. Not Lamborghini rich, but rich enough to understand the niche references Drake makes in his songs.
     </p>
     <p className="mb-4 text-zinc-400">
-      That mindset started early. When I was nine, I was already running little businesses. Lemonade stands, reselling, whatever turned curiosity into money. I wasn't just chasing cash—I was chasing leverage. The idea that one smart system could outperform a hundred hours of work.
+      At <span className="font-semibold text-white">15</span>, I started a clothing brand. I was figuring out how businesses work although it didnt work out i still learnt a lot.
     </p>
     <p className="mb-4 text-zinc-400">
-      By <span className="font-semibold text-white">17</span>, that turned into{" "}
+      At <span className="font-semibold text-white">16</span>, I built{" "}
       <a
         href="https://provocis.com"
         target="_blank"
@@ -166,13 +166,25 @@ const AboutBlock = () => (
       >
         ProVocis
       </a>
-      . It's an AI workspace for people who feel clueless about AI and want to actually use it in their daily life. ProVocis gives users multiple tools that help them work faster, think clearer, and get more done—basically turning AI into something practical instead of overwhelming.
+      . An AI workspace that doesn't kill creativity. It helps you balance life and productivity, making you 10x more efficient. I want everyone to integrate AI into their workflow.
     </p>
     <p className="mb-4 text-zinc-400">
-      I built it right after my birthday and scaled it while most people my age were still figuring out what they wanted to do. I ended up dropping out of high school and moving straight into tech, and not long after that I got a software role with <span className="font-semibold text-white">Mercedes-Benz</span>.
+      At <span className="font-semibold text-white">17</span>, I launched{" "}
+      <a
+        href="https://refound.studio"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-white hover:text-red-300 transition-colors cursor-pointer"
+      >
+        Refound
+      </a>
+      {" "}with Alex, my best friend and ProVocis co-founder. Wanted to gain real sales experience, so we reached out to businesses lacking digital presence. Understood their challenges, delivered tailored solutions, and watched my net worth explode.
+    </p>
+    <p className="mb-4 text-zinc-400">
+      Dropped out of high school, went into tech, landed at <span className="font-semibold text-white">Mercedes-Benz</span>. Now I'm building products and working with companies that move fast.
     </p>
     <p className="text-zinc-400">
-      Now I'm focused on building more products and working with companies that move fast. If you're on this page, you're probably curious about what I'm building—stick around.
+      If you're here, you're probably building something. Let's connect.
     </p>
   </Block>
 );
@@ -270,7 +282,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="pb-6">
+    <footer className="mt-auto pb-6">
       <p className="text-center text-zinc-400">
         This website was built by{" "}
         <a

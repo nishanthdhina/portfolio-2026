@@ -1,4 +1,3 @@
-import React from "react";
 import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 import {
   FiBell,
@@ -9,7 +8,6 @@ import {
   FiUser,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
 
 export const NeuHero = () => {
   return (

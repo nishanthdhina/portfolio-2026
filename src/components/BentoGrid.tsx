@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { FiArrowRight, FiDollarSign, FiClock } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import { SiGithub, SiLinkedin, SiTiktok, SiInstagram } from "react-icons/si";
 
 export const RevealBento = () => {
